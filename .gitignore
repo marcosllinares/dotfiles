@@ -1,0 +1,18 @@
+# caches/temporales
+.zcompdump*
+.viminfo
+.cache/
+local/
+.lock
+*.swp
+*.swo
+
+# oh-my-zsh (instalación externa)
+.oh-my-zsh/
+
+# tmux plugins (TPM clona aquí por defecto)
+.tmux/plugins/
+
+# nvim runtime (normalmente no está en .config, pero por si acaso)
+# plugin/packer_compiled.lua
+
