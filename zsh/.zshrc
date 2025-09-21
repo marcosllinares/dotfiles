@@ -92,12 +92,12 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
 # --- transient Prompt ---
-# export TRANSIENT_PROMPT_TRANSIENT_PROMPT='❯ '
-# export TRANSIENT_PROMPT_TRANSIENT_PROMPT=$'\n%F{2}❯ %f'
-#
-# source "$HOME/.config/zsh-transient-prompt/transient-prompt.zsh-theme"
-#
-# typeset -f transient_prompt_enable >/dev/null && transient_prompt_enable
+export TRANSIENT_PROMPT_TRANSIENT_PROMPT='❯ '
+export TRANSIENT_PROMPT_TRANSIENT_PROMPT=$'\n%F{2}❯ %f'
+
+source "$HOME/.config/zsh-transient-prompt/transient-prompt.zsh-theme"
+
+typeset -f transient_prompt_enable >/dev/null && transient_prompt_enable
 
 # --- pyenv ---
 export PYENV_ROOT="$HOME/.pyenv"
