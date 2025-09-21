@@ -92,7 +92,7 @@ eval "$(starship init zsh)"
 
 # --- transient Prompt ---
 export TRANSIENT_PROMPT_TRANSIENT_PROMPT='❯ '
-export TRANSIENT_PROMPT_TRANSIENT_PROMPT=$'\n%F{2}❯ %f'
+export TRANSIENT_PROMPT_TRANSIENT_PROMPT=$'\n%F{4}❯ %f'
 
 source "$HOME/.config/zsh-transient-prompt/transient-prompt.zsh-theme"
 
