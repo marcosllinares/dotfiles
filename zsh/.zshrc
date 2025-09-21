@@ -50,6 +50,7 @@ alias l='ls -la'
 alias c='clear'
 alias lg='lazygit'
 alias t='tmux a'
+alias ltr='eza -la --tree'
 alias cdrive='cd /mnt/c/Users/Marcos/'
 alias rmzoneidentifier='rm *:Zone.Identifier'
 
