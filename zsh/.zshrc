@@ -15,7 +15,6 @@ plugins=(
   zsh-history-substring-search
   zsh-autosuggestions
   zsh-syntax-highlighting
-  # zsh-transient-prompt
 )
 
 source $ZSH/oh-my-zsh.sh
