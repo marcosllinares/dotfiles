@@ -6,6 +6,23 @@ require "nvchad.options"
 -- Recommended session options from auto-sessions
 vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
 
+-- ========== Diagnostics base ==========
+vim.diagnostic.config({
+  virtual_text = { prefix = "●", spacing = 2 },   -- texto inline
+  signs = true,                                    -- signos en el gutter
+  underline = true,
+  update_in_insert = true,
+  severity_sort = true,
+  float = { border = "rounded", source = "if_many" },
+})
+
+-- Iconos del gutter
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
 -- CLIPBOARD
 
 -- Usar clip.exe para enlazar el clipboard del sistema

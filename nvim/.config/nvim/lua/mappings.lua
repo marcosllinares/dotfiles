@@ -80,8 +80,15 @@ map("n", "<leader>H", function()
   require("nvchad.term").toggle({ pos = "sp" }) -- "sp" = split horizontal
 end, { desc = "Open horizontal terminal" })
 
+-- DIAGNOSTICS ----------------------------------------------
+-- Keymaps rápidos para diagnostics (globales)
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)   -- ver detalle
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev,   opts)  -- anterior
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next,   opts)  -- siguiente
+vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, opts) -- a loclist
 
--- Disable mappings
+-- Disable mappings ----------------------------------------
 local nomap = vim.keymap.del
 
 -- Desactiva el mapping por defecto para <leader>h en modo normal
