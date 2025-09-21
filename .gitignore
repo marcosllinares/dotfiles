@@ -16,3 +16,5 @@ local/
 # nvim runtime (normalmente no está en .config, pero por si acaso)
 # plugin/packer_compiled.lua
 
+nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/lua/chadrc.lua
