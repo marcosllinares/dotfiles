@@ -15,6 +15,7 @@ plugins=(
   zsh-history-substring-search
   zsh-autosuggestions
   zsh-syntax-highlighting
+  # zsh-transient-prompt
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -84,13 +85,23 @@ zle -N copy_cwd_to_clipboard
 # PATH
 # -----------------------------------------------------
 
-# homebrew
+# --- homebrew ---
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# starship prompt
+
+# --- starship prompt ---
 eval "$(starship init zsh)"
+
+# --- transient Prompt ---
+# export TRANSIENT_PROMPT_TRANSIENT_PROMPT='❯ '
+# export TRANSIENT_PROMPT_TRANSIENT_PROMPT=$'\n%F{2}❯ %f'
+#
+# source "$HOME/.config/zsh-transient-prompt/transient-prompt.zsh-theme"
+#
+# typeset -f transient_prompt_enable >/dev/null && transient_prompt_enable
 
 # --- pyenv ---
 export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_DISABLE_PROMPT_REHASH=1
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init -)"
