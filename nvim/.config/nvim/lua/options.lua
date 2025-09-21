@@ -11,7 +11,7 @@ vim.diagnostic.config({
   virtual_text = { prefix = "●", spacing = 2 },   -- texto inline
   signs = true,                                    -- signos en el gutter
   underline = true,
-  update_in_insert = true,
+  update_in_insert = false,
   severity_sort = true,
   float = { border = "rounded", source = "if_many" },
 })
