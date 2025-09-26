@@ -1,10 +1,78 @@
 require "nvchad.options"
 
+
+-- CONFIGURACIÓN NEOVIM ==================================================================
+
+-- Líneas y numeración
+vim.opt.number = true                -- Habilita números de línea
+vim.opt.relativenumber = true        -- Habilita números relativos
+
+-- Configuración del ratón
+vim.opt.mouse = "a"                  -- Habilita el uso del ratón
+vim.opt.mousemoveevent = true        -- Permite eventos de movimiento del ratón
+
+-- Indentación
+vim.opt.tabstop = 4                  -- Número de espacios por tabulación
+vim.opt.softtabstop = 4              -- Espacios al borrar tabulaciones
+vim.opt.shiftwidth = 4               -- Espacios al indentar
+vim.opt.expandtab = true             -- Convierte tabulaciones en espacios
+-- vim.opt.autoindent = true            -- Copia la indentación de la línea anterior
+vim.opt.smartindent = true           -- Indenta automáticamente según el código
+vim.opt.smarttab = true              -- Usa tabulaciones inteligentes
+
+-- Interfaz
+vim.opt.scrolloff = 8                -- Mantiene 8 líneas visibles alrededor del cursor
+vim.opt.wrap = false                 -- Deshabilita el ajuste de línea
+vim.opt.signcolumn = "yes"           -- Siempre muestra la columna de signos
+vim.opt.foldcolumn = "1"             -- Muestra una columna de pliegues
+-- vim.opt.colorcolumn = "80"           -- NO FUNCIONA?
+vim.g.have_nerd_font = true
+-- vim.g.custom_lualine_show_lsp_names = true  -- Muestra lsp-servers en lualine
+
+-- Modo y apariencia
+vim.opt.showmode = false             -- Lualine se encarga de mostrar el modo activo
+vim.opt.termguicolors = true
+
+-- Búsquedas
+vim.opt.ignorecase = true            -- Búsqueda insensible a mayúsculas
+vim.opt.smartcase = true             -- Sensible si hay mayúsculas
 -- CursorLine showing
 -- vim.o.cursorlineopt = "both"
 
+-- Sustituciones
+vim.opt.inccommand = 'nosplit'       -- Vista previa de sustituciones
+
+-- Edición
+vim.opt.breakindent = true           -- Mantiene indentación en líneas largas
+vim.opt.formatoptions:remove({ 'o' })-- Evita insertar comentarios en nuevas líneas
+vim.api.nvim_create_autocmd('BufEnter', {
+    callback = function() vim.opt_local.formatoptions:remove({ 'o' }) end,
+    desc = 'Evita comentarios en líneas nuevas',
+})
+
+-- Copias de respaldo y undoo tree
+vim.opt.swapfile = false
+vim.opt.backup = false
+-- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true              -- Historial de deshacer persistente
+
+-- Rendimiento
+vim.opt.updatetime = 50          -- Menor tiempo para actualizaciones
+
 -- Recommended session options from auto-sessions
 vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+
+vim.opt.list = true                  -- Muestra caracteres invisibles
+
+vim.opt.fillchars = {                -- Personaliza elementos visuales
+    foldopen = '',
+    foldclose = '',
+    fold = ' ',
+    foldsep = ' ',
+    eob = ' ',
+    diff = '╱',
+}
+
 
 -- CLIPBOARD
 
