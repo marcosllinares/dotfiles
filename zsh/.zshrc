@@ -98,9 +98,19 @@ source "$HOME/.config/zsh-transient-prompt/transient-prompt.zsh-theme"
 
 typeset -f transient_prompt_enable >/dev/null && transient_prompt_enable
 
-# --- pyenv ---
-export PYENV_ROOT="$HOME/.pyenv"
-export PYENV_DISABLE_PROMPT_REHASH=1
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init -)"
+# --- pyenv (solo si existe) ---
+# BORRAR
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PYENV_DISABLE_PROMPT_REHASH=1
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init - zsh)"
+# eval "$(pyenv virtualenv-init -)"
+if [ -d "$HOME/.pyenv/bin" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init - zsh)"
+  eval "$(pyenv virtualenv-init -)"
+fi
