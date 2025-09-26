@@ -5,9 +5,14 @@ vim.lsp.enable(servers)
 
 -- ========== Diagnostics base ==========
 vim.diagnostic.config({
-  vitual_lines = true,
-  -- virtual_text = { prefix = "●", spacing = 2 },   -- texto inline
-  signs = true,                                    -- signos en el gutter
+  -- vitual_lines = true,
+  -- virtual_text = { prefix = "●", spacing = 2 },
+  virtual_text = {
+    severity = { min = vim.diagnostic.severity.ERROR }, -- solo errores
+    prefix = "●", -- opcional: símbolo para errores
+    spacing = 2,
+  },
+  signs = true,
   underline = true,
   update_in_insert = false,
   severity_sort = true,
@@ -29,11 +34,13 @@ vim.diagnostic.config({
 -- Iconos del gutter
 -- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 -- local signs = { Error = " ", Warn = " ", Info = " ", Hint = "󰌶 " }
--- for type, icon in pairs(signs) do
---   local hl = "DiagnosticSign" .. type
---   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
--- end
 
+vim.keymap.set("n", "<leader>td", function()
+  local config = vim.diagnostic.config()
+  vim.diagnostic.config({
+    virtual_text = not config.virtual_text
+  })
+end, { desc = "Toggle diagnostics virtual text" })
 
 -- ===============================
 -- Keymaps + highlight al adjuntar LSP
