@@ -32,3 +32,11 @@ vim.api.nvim_create_autocmd("BufDelete", {
     end
   end,
 })
+
+-- Asegura que foldlevel sea 99 
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  callback = function()
+    vim.opt_local.foldlevel = 99
+    vim.opt_local.foldlevelstart = 99
+  end,
+})

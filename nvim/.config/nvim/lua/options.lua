@@ -24,7 +24,7 @@ vim.opt.smarttab = true              -- Usa tabulaciones inteligentes
 vim.opt.scrolloff = 8                -- Mantiene 8 líneas visibles alrededor del cursor
 vim.opt.wrap = false                 -- Deshabilita el ajuste de línea
 vim.opt.signcolumn = "yes"           -- Siempre muestra la columna de signos
-vim.opt.foldcolumn = "1"             -- Muestra una columna de pliegues
+-- vim.opt.foldcolumn = "1"             -- Muestra una columna de pliegues
 -- vim.opt.colorcolumn = "80"           -- NO FUNCIONA?
 vim.g.have_nerd_font = true
 -- vim.g.custom_lualine_show_lsp_names = true  -- Muestra lsp-servers en lualine
@@ -62,16 +62,16 @@ vim.opt.updatetime = 50          -- Menor tiempo para actualizaciones
 -- Recommended session options from auto-sessions
 vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
 
-vim.opt.list = true                  -- Muestra caracteres invisibles
+-- vim.opt.list = true                  -- Muestra caracteres invisibles
 
-vim.opt.fillchars = {                -- Personaliza elementos visuales
-    foldopen = '',
-    foldclose = '',
-    fold = ' ',
-    foldsep = ' ',
-    eob = ' ',
-    diff = '╱',
-}
+-- vim.opt.fillchars = {                -- Personaliza elementos visuales
+--     foldopen = '',
+--     foldclose = '',
+--     fold = ' ',
+--     foldsep = ' ',
+--     eob = ' ',
+--     diff = '╱',
+-- }
 
 
 -- CLIPBOARD
@@ -95,3 +95,10 @@ vim.g.clipboard = {
 -- Aquí lo dejamos vacío para que `p` pegue siempre de Neovim, no del sistema
 vim.opt.clipboard = ""
 
+
+-- UFO folding
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
