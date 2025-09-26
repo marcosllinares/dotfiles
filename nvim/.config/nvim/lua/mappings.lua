@@ -49,6 +49,10 @@ vim.keymap.set('n', '<C-S-v>', '<C-v>', { noremap = true, silent = true })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- TRANSPARENT ------------------------------------------
+vim.keymap.set("n", "<leader>tt", function() require("base46").toggle_transparency() end, { desc = "Toggle transparency" })
+
+
 -- SUSBTITUTTE ------------------------------------------
 vim.keymap.set("n", "s", require("substitute").operator, { noremap = true, desc = "Sustituir con movimiento" })
 vim.keymap.set("n", "ss", require("substitute").line, { noremap = true, desc = "Sustituir línea actual" })
