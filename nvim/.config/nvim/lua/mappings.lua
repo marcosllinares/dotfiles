@@ -48,7 +48,8 @@ vim.keymap.set('n', '<C-S-v>', '<C-v>', { noremap = true, silent = true })
 -- Buscar con n/N el resultado quede centrado en pantalla y abre el fold
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-
+-- TELESCOPE ------------------------------------------
+vim.keymap.set("n", "<leader>fW", require("telescope.builtin").grep_string, { desc = "Search word under cursor" })
 -- TRANSPARENT ------------------------------------------
 vim.keymap.set("n", "<leader>tt", function() require("base46").toggle_transparency() end, { desc = "Toggle transparency" })
 

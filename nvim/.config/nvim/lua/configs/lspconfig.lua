@@ -61,6 +61,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>lr", vim.lsp.buf.rename, "Rename all references")
     map("<leader>lf", vim.lsp.buf.format, "Format")
     map("<leader>V", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
+    map("gI", vim.lsp.buf.implementation, "Goto Implementation")
+    map("<leader>IV",  "<cmd>vsplit | lua vim.lsp.buf.implementation()<cr>", "Goto Implementation in Vertical Split")
+
 
     -- highlight símbolos bajo cursor
     local function client_supports_method(client, method, bufnr)
