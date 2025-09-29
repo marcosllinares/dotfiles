@@ -60,7 +60,12 @@ vim.opt.undofile = true              -- Historial de deshacer persistente
 vim.opt.updatetime = 50          -- Menor tiempo para actualizaciones
 
 -- Recommended session options from auto-sessions
-vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,resize'
+-- No igualar splits automáticamente
+vim.o.equalalways = false
+-- (opcional) controla cómo se igualarían si lo activaras:
+-- vim.o.eadirection = "both"
+
 
 -- vim.opt.list = true                  -- Muestra caracteres invisibles
 
