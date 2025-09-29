@@ -40,3 +40,23 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     vim.opt_local.foldlevelstart = 99
   end,
 })
+
+local grp = vim.api.nvim_create_augroup("remember_folds_ufo", { clear = true })
+
+-- Guardar folds al salir de la ventana del buffer
+vim.api.nvim_create_autocmd("BufWinLeave", {
+  group = grp,
+  callback = function()
+    pcall(vim.cmd, "mkview")
+  end,
+})
+
+-- Restaurar folds al entrar (con pequeño delay para que ufo/treesitter no lo pisen)
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = grp,
+  callback = function()
+    vim.schedule(function()
+      pcall(vim.cmd, "silent! loadview")
+    end)
+  end,
+})

@@ -12,16 +12,16 @@ vim.opt.mouse = "a"                  -- Habilita el uso del ratón
 vim.opt.mousemoveevent = true        -- Permite eventos de movimiento del ratón
 
 -- Indentación
-vim.opt.tabstop = 4                  -- Número de espacios por tabulación
-vim.opt.softtabstop = 4              -- Espacios al borrar tabulaciones
-vim.opt.shiftwidth = 4               -- Espacios al indentar
+vim.opt.tabstop = 2                  -- Número de espacios por tabulación
+vim.opt.softtabstop = 2              -- Espacios al borrar tabulaciones
+vim.opt.shiftwidth = 2               -- Espacios al indentar
 vim.opt.expandtab = true             -- Convierte tabulaciones en espacios
 -- vim.opt.autoindent = true            -- Copia la indentación de la línea anterior
 vim.opt.smartindent = true           -- Indenta automáticamente según el código
 vim.opt.smarttab = true              -- Usa tabulaciones inteligentes
 
 -- Interfaz
-vim.opt.scrolloff = 8                -- Mantiene 8 líneas visibles alrededor del cursor
+-- vim.opt.scrolloff = 8                -- Mantiene 8 líneas visibles alrededor del cursor
 vim.opt.wrap = false                 -- Deshabilita el ajuste de línea
 vim.opt.signcolumn = "yes"           -- Siempre muestra la columna de signos
 -- vim.opt.foldcolumn = "1"             -- Muestra una columna de pliegues
@@ -102,3 +102,5 @@ vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decr
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+-- Guarda y restaura folds automáticamente por buffer
+vim.opt.viewoptions = "cursor,folds,slash,unix"
