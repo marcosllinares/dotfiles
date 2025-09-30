@@ -25,7 +25,7 @@ vim.opt.smarttab = true              -- Usa tabulaciones inteligentes
 vim.opt.wrap = false                 -- Deshabilita el ajuste de línea
 vim.opt.signcolumn = "yes"           -- Siempre muestra la columna de signos
 -- vim.opt.foldcolumn = "1"             -- Muestra una columna de pliegues
-vim.opt.colorcolumn = "100"           -- NO FUNCIONA?
+vim.opt.colorcolumn = "130"           -- NO FUNCIONA?
 vim.g.have_nerd_font = true
 -- vim.g.custom_lualine_show_lsp_names = true  -- Muestra lsp-servers en lualine
 
@@ -66,21 +66,7 @@ vim.o.equalalways = false
 -- (opcional) controla cómo se igualarían si lo activaras:
 -- vim.o.eadirection = "both"
 
-
--- vim.opt.list = true                  -- Muestra caracteres invisibles
-
--- vim.opt.fillchars = {                -- Personaliza elementos visuales
---     foldopen = '',
---     foldclose = '',
---     fold = ' ',
---     foldsep = ' ',
---     eob = ' ',
---     diff = '╱',
--- }
-
-
 -- CLIPBOARD
-
 -- Usar clip.exe para enlazar el clipboard del sistema
 vim.g.clipboard = {
   name = 'WslClipboard',
@@ -106,6 +92,7 @@ vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+-- vim.opt.list = true                  -- Muestra caracteres invisibles
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 -- Guarda y restaura folds automáticamente por buffer
 vim.opt.viewoptions = "cursor,folds,slash,unix"

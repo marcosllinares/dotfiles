@@ -14,7 +14,7 @@ return {
       })
       opts.modified = { enable = true, show_on_dirs = false, show_on_open_dirs = false }
       opts.renderer = vim.tbl_deep_extend("force", opts.renderer or {}, {
-        highlight_git = "none",                 -- "none" | "icon" | "name" | "all" | true
+        highlight_git = "name",                 -- "none" | "icon" | "name" | "all" | true
         highlight_modified = "name",            -- "none" | "icon" | "name" | "all" 
         icons = {
           git_placement = "right_align",        -- o "right_align" , "after"
@@ -22,11 +22,13 @@ return {
           glyphs = {
             modified = "✱",
             git = {
-              unstaged  = "",
+              unstaged  = "M",
+              -- unstaged  = "",
               staged    = "",
               unmerged  = "",
               renamed   = "",
-              untracked = "",
+              untracked = "U",
+              -- untracked = "",
               deleted   = "",
               ignored   = "󰴲",
             },

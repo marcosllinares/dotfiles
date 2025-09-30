@@ -50,7 +50,6 @@ M.nvdash = {
       { txt = "x  Quit", keys = "q", cmd = "qa" },
 
       { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
-
       {
         txt = function()
           local stats = require("lazy").stats()
@@ -61,11 +60,9 @@ M.nvdash = {
         no_gap = true,
         content = "fit",
       },
-
       -- { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
     },
 }
-
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 
 M.ui = {
