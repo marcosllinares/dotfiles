@@ -25,7 +25,7 @@ vim.opt.smarttab = true              -- Usa tabulaciones inteligentes
 vim.opt.wrap = false                 -- Deshabilita el ajuste de línea
 vim.opt.signcolumn = "yes"           -- Siempre muestra la columna de signos
 -- vim.opt.foldcolumn = "1"             -- Muestra una columna de pliegues
--- vim.opt.colorcolumn = "80"           -- NO FUNCIONA?
+vim.opt.colorcolumn = "100"           -- NO FUNCIONA?
 vim.g.have_nerd_font = true
 -- vim.g.custom_lualine_show_lsp_names = true  -- Muestra lsp-servers en lualine
 
