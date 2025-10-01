@@ -2,6 +2,11 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     opts = function(_, opts)
+      -- Mostrar SIEMPRE archivos/dirs ignorados por git (toggle "I")
+      opts.filters = vim.tbl_deep_extend("force", opts.filters or {}, {
+        git_ignored = false,  -- por defecto NvimTree oculta lo ignorado si esto es true
+        dotfiles = false,  -- por si también quieres ver .archivos siempre
+      })
       -- ancho del panel
       opts.view = vim.tbl_deep_extend("force", opts.view or {}, {
         width = 36,      -- aquí pones el número de columnas que quieras
