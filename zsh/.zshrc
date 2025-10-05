@@ -54,6 +54,7 @@ alias ltr='eza -la --tree --ignore-glob=".git|node_modules|.venv"'
 alias ltrgit='eza -la --tree --ignore-glob="node_modules|.venv"'
 alias cdrive='cd /mnt/c/Users/Marcos/'
 alias rmzoneidentifier='rm *:Zone.Identifier'
+alias cdunitypc='cd /mnt/e/UnityProjects'
 
 # -----------------------------------------------------
 # FUNCIONES
