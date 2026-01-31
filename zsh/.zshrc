@@ -97,7 +97,9 @@ eval "$(starship init zsh)"
 export TRANSIENT_PROMPT_TRANSIENT_PROMPT='❯ '
 export TRANSIENT_PROMPT_TRANSIENT_PROMPT=$'\n%F{4}❯ %f'
 
-source "$HOME/.config/zsh-transient-prompt/transient-prompt.zsh-theme"
+# source "$HOME/.config/zsh-transient-prompt/transient-prompt.zsh-theme"
+# La ruta exacta de Homebrew:
+source /home/linuxbrew/.linuxbrew/share/zsh-transient-prompt/transient-prompt.zsh-theme
 
 typeset -f transient_prompt_enable >/dev/null && transient_prompt_enable
 
