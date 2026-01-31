@@ -1,10 +1,6 @@
-# 🏠 Dotfiles de marcosllinares
+Configuración personal para **WSL2/Ubuntu** con herramientas: Neovim (NvChad), Tmux, Zsh (Oh My Zsh), Starship, Yazi, y más.
 
-Configuración personal para **WSL2/Ubuntu** con herramientas modernas de terminal: Neovim (NvChad), Tmux, Zsh (Oh My Zsh), Starship, Yazi, y más.
-
-## 📦 Contenido del Repositorio
-
-Este repositorio usa **GNU Stow** para gestionar enlaces simbólicos. Estructura:
+## 📦 Estructura del Repositorio
 
 ```
 dotfiles/
@@ -43,17 +39,7 @@ cd ~/dotfiles
 ### 4️⃣ **Instalar Herramientas con Homebrew**
 
 ```bash
-brew install \
-  neovim \
-  tmux \
-  starship \
-  yazi \
-  lazygit \
-  fzf \
-  ripgrep \
-  fd \
-  eza \
-  bat
+brew install nvim tmux starship yazi lazygit fzf ripgrep tree eza fd bat
 ```
 
 ### 5️⃣ **Configurar Zsh y Oh My Zsh**
@@ -65,24 +51,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 #### Instalar plugins de terceros:
 ```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-git clone https://github.com/zsh-users/zsh-history-substring-search \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 ```
 
 #### Instalar Transient Prompt (para prompts limpios):
 ```bash
-# Opción 1: Via Git (recomendado)
-git clone https://github.com/romkatv/powerlevel10k.git \
-  ~/.config/zsh-transient-prompt
-
-# Opción 2: O busca el plugin específico que uses
-# Si no lo encuentras, comenta las líneas de transient-prompt en .zshrc
+# Plugin específico para el prompt limpio
+brew tap olets/tap
+brew install olets/tap/zsh-transient-prompt
 ```
 
 ### 6️⃣ **Aplicar Dotfiles con GNU Stow**
@@ -91,11 +69,6 @@ git clone https://github.com/romkatv/powerlevel10k.git \
 
 ```bash
 cd ~/dotfiles
-
-# Backup de configuraciones existentes (opcional)
-mv ~/.zshrc ~/.zshrc.backup 2>/dev/null
-mv ~/.tmux.conf ~/.tmux.conf.backup 2>/dev/null
-mv ~/.config/nvim ~/.config/nvim.backup 2>/dev/null
 
 # Aplicar configuraciones con Stow
 stow zsh
@@ -132,7 +105,7 @@ nvim  # Espera a que Lazy instale todos los plugins
 yes | ~/.fzf/install --key-bindings --completion --no-update-rc
 ```
 
-### 8️��� **Reiniciar la Shell**
+### 8️⃣ **Reiniciar la Shell**
 
 ```bash
 exec zsh
@@ -158,19 +131,6 @@ exec zsh
    - La configuración actual asume **terminal con fondo negro**
    - Si usas fondo claro, ajusta las líneas 94-97 de `.tmux.conf`
 
-### 🎨 **Fuentes (Windows Terminal):**
-
-Asegúrate de usar una **Nerd Font** en Windows Terminal:
-
-```json
-// settings.json de Windows Terminal
-"font": {
-    "face": "CaskaydiaCove Nerd Font",
-    "size": 11
-}
-```
-
-Descarga: [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 
 ## 🔧 Configuraciones Destacadas
 
@@ -219,23 +179,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 :MasonInstallAll
 ```
 
-### Transient Prompt no funciona
-```bash
-# Verifica que existe el archivo
-ls ~/.config/zsh-transient-prompt/transient-prompt.zsh-theme
-# Si no existe, comenta las líneas en .zshrc o instala el plugin
-```
-
-## 📚 Recursos
-
-- [GNU Stow](https://www.gnu.org/software/stow/)
-- [NvChad](https://nvchad.com/)
-- [Oh My Zsh](https://ohmyz.sh/)
-- [Starship](https://starship.rs/)
-- [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
-- [Yazi](https://yazi-rs.github.io/)
-
-## 📄 Licencia
 
 Configuración personal de uso libre. Los temas y plugins de terceros mantienen sus licencias originales (ver archivos LICENSE en subdirectorios).
 
